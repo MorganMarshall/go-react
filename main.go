@@ -3,21 +3,13 @@ package main
 import (
 	"log"
 	"net/http"
-	"os"
+	
 	
 )
 
 func main() {
 	// Simple static webserver:
-	log.Fatal(http.ListenAndServe(GetPort(), http.FileServer(http.Dir("./"))))
+	log.Fatal(http.ListenAndServe("localhost:$PORT", http.FileServer(http.Dir("./"))))
 }
 
 
-func GetPort() string {
-	 	var port = os.Getenv("PORT")
-		// Set a default port if there is nothing in the environment
-	 	if port == "" {
- 		port = "4747"
-	 	}
-	 	return ":" + port
-	 }
