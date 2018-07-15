@@ -9,7 +9,7 @@ import (
 
 func main() {
 	// Simple static webserver:
-	log.Fatal(http.ListenAndServe(":$PORT", http.FileServer(http.Dir("/"))))
+	log.Fatal(http.ListenAndServe(":8080", http.FileServer(http.Dir("/"))))
 }
 
 
