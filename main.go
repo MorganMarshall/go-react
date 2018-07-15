@@ -11,7 +11,7 @@ import (
 func main() {
 	// Simple static webserver:
 	
-	log.Fatal(http.ListenAndServe("/", http.FileServer(http.Dir("./"))))
+	http.Handle("/", http.FileServer(http.Dir("./")))
 }
 
 
