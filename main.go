@@ -10,8 +10,8 @@ import (
 
 func main() {
 	// Simple static webserver:
-	port := ":" + os.Getenv("PORT")
-	log.Fatal(http.ListenAndServe(port, http.FileServer(http.Dir("./"))))
+	
+	log.Fatal(http.ListenAndServe("/", http.FileServer(http.Dir("./"))))
 }
 
 
