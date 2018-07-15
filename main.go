@@ -3,13 +3,15 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 	
 	
 )
 
 func main() {
 	// Simple static webserver:
-	log.Fatal(http.ListenAndServe(":8080", http.FileServer(http.Dir("/"))))
+	port := ":" + os.Getenv("PORT")
+	log.Fatal(http.ListenAndServe(port, http.FileServer(http.Dir("/"))))
 }
 
 
