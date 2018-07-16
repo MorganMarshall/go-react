@@ -7,8 +7,13 @@ import (
 )
 
 func main() {
+
+	port := os.Getenv("PORT")
+    if port == "" {
+        port = "$PORT"
+    }
 	// Simple static webserver:
-	log.Fatal(http.ListenAndServe(":"+os.Getenv("$PORT"), http.FileServer(http.Dir("./"))))
+	log.Fatal(http.ListenAndServe(":"+port, http.FileServer(http.Dir("./"))))
 }
 
 
