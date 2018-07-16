@@ -6,12 +6,23 @@ import (
 	"os"
 )
 
+func determineListenAddress() (string, error) {
+	port := os.Getenv("PORT")
+	if port == "" {
+	  return "", fmt.Errorf("$PORT not set")
+	}
+	return ":" + port, nil
+  }
+
 func main() {
 	// Simple static webserver:
-	port := os.Getenv("PORT")
+	addr, err := determineListenAddress()
+  if err != nil {
+    log.Fatal(err)
+  }
 
 
-	log.Fatal(http.ListenAndServe(port, http.FileServer(http.Dir("./"))))
+	log.Fatal(http.ListenAndServe(addr, http.FileServer(http.Dir("./"))))
 }
 
 
