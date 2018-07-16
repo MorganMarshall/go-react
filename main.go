@@ -1,16 +1,13 @@
 package main
 
 import (
-	
+	"log"
 	"net/http"
-	
 )
 
 func main() {
-
-
 	// Simple static webserver:
-	http.ListenAndServe(":$PORT", http.FileServer(http.Dir("public")))
+	log.Fatal(http.ListenAndServe(":$PORT", http.FileServer(http.Dir("./"))))
 }
 
 
