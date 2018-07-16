@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
-	"os"
+	
 )
 
 func main() {
@@ -11,7 +11,7 @@ func main() {
 	port := os.Getenv("PORT")
 
 
-	log.Fatal(http.ListenAndServe(":" + port, http.FileServer(http.Dir("./"))))
+	log.Fatal(http.ListenAndServe(port, http.FileServer(http.Dir("./"))))
 }
 
 
