@@ -4,6 +4,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"fmt"
 )
 
 func determineListenAddress() (string, error) {
