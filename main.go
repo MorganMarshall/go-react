@@ -11,7 +11,7 @@ func main() {
 
 
 
-	log.Fatal(http.ListenAndServe(":" + PORT, http.FileServer(http.Dir("./"))))
+	log.Fatal(http.ListenAndServe((":" + PORT), http.FileServer(http.Dir("./"))))
 }
 
 
