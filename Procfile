@@ -1,1 +1,1 @@
-web: go-react
+web: go run main.go
