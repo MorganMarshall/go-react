@@ -1,2 +1,2 @@
-web: go-react
-port=$PORT
+web: main.go
+port:$PORT
