@@ -1,1 +1,1 @@
-web: go-react
+web: go-react $PORT
